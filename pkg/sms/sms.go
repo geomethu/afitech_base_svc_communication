@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/geomethu/afitech_base_svc_communication/config"
+	"github.com/geomethu/afitech/svc_communication/config"
 )
 
 type SMSMessage interface {

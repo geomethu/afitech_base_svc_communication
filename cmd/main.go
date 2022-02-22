@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/geomethu/afitech_base_svc_communication/config"
-	"github.com/geomethu/afitech_base_svc_communication/internal/app"
-	"github.com/geomethu/afitech_base_svc_communication/pkg/log"
-	"github.com/geomethu/afitech_base_svc_communication/pkg/sms"
+	"github.com/geomethu/afitech/svc_communication/config"
+	"github.com/geomethu/afitech/svc_communication/internal/app"
+	"github.com/geomethu/afitech/svc_communication/pkg/log"
+	"github.com/geomethu/afitech/svc_communication/pkg/sms"
 	"go.uber.org/zap"
 )
 

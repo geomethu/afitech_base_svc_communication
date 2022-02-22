@@ -1,7 +1,7 @@
 package grpc
 
 import (
-	"github.com/geomethu/afitech_base_svc_communication/internal/delivery/grpc/v1/pb"
+	"github.com/geomethu/afitech/svc_communication/internal/delivery/grpc/v1/pb"
 	"google.golang.org/grpc"
 )
 
