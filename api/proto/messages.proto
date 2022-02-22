@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package afitech.communication.pb;
+
+option go_package = "./pb";
+option java_multiple_files = true;
+option java_package = "base.v1";
+
+
+message Sms {
+    string mobile = 1;
+    string msg = 2;
+    string title = 3;
+}
+
+message SmsResponse {
+    bool is_okay = 1;
+}
