@@ -1,6 +1,6 @@
 package grpc
 
-import "github.com/geomethu/afitech/svc_communication/internal/delivery/grpc/v1/pb"
+import "github.com/geomethu/afitech_svc_communication/internal/delivery/grpc/v1/pb"
 
 
 

@@ -1,4 +1,4 @@
-module github.com/geomethu/afitech/svc_communication
+module github.com/geomethu/afitech_svc_communication
 
 go 1.17
 

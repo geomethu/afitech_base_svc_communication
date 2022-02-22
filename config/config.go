@@ -3,7 +3,7 @@ package config
 import (
 	"os"
 
-	"github.com/geomethu/afitech/svc_communication/pkg/log"
+	"github.com/geomethu/afitech_svc_communication/pkg/log"
 	"github.com/joho/godotenv"
 	"go.uber.org/zap"
 )

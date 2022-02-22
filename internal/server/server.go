@@ -3,9 +3,9 @@ package server
 import (
 	"net"
 
-	"github.com/geomethu/afitech/svc_communication/config"
-	"github.com/geomethu/afitech/svc_communication/internal/delivery/grpc"
-	"github.com/geomethu/afitech/svc_communication/pkg/log"
+	"github.com/geomethu/afitech_svc_communication/config"
+	"github.com/geomethu/afitech_svc_communication/internal/delivery/grpc"
+	"github.com/geomethu/afitech_svc_communication/pkg/log"
 	"go.uber.org/zap"
 )
 

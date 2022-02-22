@@ -1,7 +1,7 @@
 package server
 
 import (
-	"github.com/geomethu/afitech/svc_communication/config"
+	"github.com/geomethu/afitech_svc_communication/config"
 	"google.golang.org/grpc"
 )
 
