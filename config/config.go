@@ -37,6 +37,8 @@ type (
 	}
 
 	Email struct {
+		Username string
+		APIKey string
 	}
 )
 
