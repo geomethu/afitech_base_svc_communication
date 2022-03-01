@@ -4,6 +4,7 @@ package pb
 
 import (
 	context "context"
+	pb "github.com/geomethu/afitech/svc_communication/pb"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -18,7 +19,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CommunicationServiceClient interface {
-	SendSms(ctx context.Context, in *Sms, opts ...grpc.CallOption) (*SmsResponse, error)
+	SendSms(ctx context.Context, in *pb.Sms, opts ...grpc.CallOption) (*pb.SmsResponse, error)
 }
 
 type communicationServiceClient struct {
@@ -29,8 +30,8 @@ func NewCommunicationServiceClient(cc grpc.ClientConnInterface) CommunicationSer
 	return &communicationServiceClient{cc}
 }
 
-func (c *communicationServiceClient) SendSms(ctx context.Context, in *Sms, opts ...grpc.CallOption) (*SmsResponse, error) {
-	out := new(SmsResponse)
+func (c *communicationServiceClient) SendSms(ctx context.Context, in *pb.Sms, opts ...grpc.CallOption) (*pb.SmsResponse, error) {
+	out := new(pb.SmsResponse)
 	err := c.cc.Invoke(ctx, "/afitech.communication.pb.CommunicationService/SendSms", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -42,7 +43,7 @@ func (c *communicationServiceClient) SendSms(ctx context.Context, in *Sms, opts 
 // All implementations must embed UnimplementedCommunicationServiceServer
 // for forward compatibility
 type CommunicationServiceServer interface {
-	SendSms(context.Context, *Sms) (*SmsResponse, error)
+	SendSms(context.Context, *pb.Sms) (*pb.SmsResponse, error)
 	mustEmbedUnimplementedCommunicationServiceServer()
 }
 
@@ -50,7 +51,7 @@ type CommunicationServiceServer interface {
 type UnimplementedCommunicationServiceServer struct {
 }
 
-func (UnimplementedCommunicationServiceServer) SendSms(context.Context, *Sms) (*SmsResponse, error) {
+func (UnimplementedCommunicationServiceServer) SendSms(context.Context, *pb.Sms) (*pb.SmsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendSms not implemented")
 }
 func (UnimplementedCommunicationServiceServer) mustEmbedUnimplementedCommunicationServiceServer() {}
@@ -67,7 +68,7 @@ func RegisterCommunicationServiceServer(s grpc.ServiceRegistrar, srv Communicati
 }
 
 func _CommunicationService_SendSms_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Sms)
+	in := new(pb.Sms)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -79,7 +80,7 @@ func _CommunicationService_SendSms_Handler(srv interface{}, ctx context.Context,
 		FullMethod: "/afitech.communication.pb.CommunicationService/SendSms",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CommunicationServiceServer).SendSms(ctx, req.(*Sms))
+		return srv.(CommunicationServiceServer).SendSms(ctx, req.(*pb.Sms))
 	}
 	return interceptor(ctx, in, info, handler)
 }

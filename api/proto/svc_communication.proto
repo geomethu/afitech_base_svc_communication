@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package afitech.communication.pb;
 
-option go_package = "github.com/geomethu/afitech/svc_communication/pb";
+option go_package = "github.com/geomethu/afitech_svc_communication/pb";
 option java_multiple_files = true;
 option java_package = "base.v1";
 
