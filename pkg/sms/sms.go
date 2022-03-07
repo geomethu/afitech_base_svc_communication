@@ -13,13 +13,13 @@ import (
 )
 
 type SMSMessage interface {
-	Send(from, to string) (*SendMessageResponse, error)
+	Send(from, to, message string) (*SendMessageResponse, error)
 }
 
 type SMSConfig struct {
-	Env      string
-	APIKey   string
 	Username string
+	APIKey   string
+	Env string
 }
 
 type SMSService struct {
